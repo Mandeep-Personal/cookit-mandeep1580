@@ -17,9 +17,9 @@ class RecipeDetailActivity : AppCompatActivity() {
     }
 
     companion object {
-
         const val recipeExtra = "RECIPE"
-        fun newIntent(recipe: Recipe, context: Context): Intent {
+
+        fun newIntent(recipe: Recipe, context: Context) : Intent {
             val intent = Intent(context, RecipeDetailActivity::class.java)
             intent.putExtra(recipeExtra, recipe)
             return intent

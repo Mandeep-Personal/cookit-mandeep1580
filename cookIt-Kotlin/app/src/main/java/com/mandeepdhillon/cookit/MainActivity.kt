@@ -1,7 +1,6 @@
 package com.mandeepdhillon.cookit
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.LayoutInflater
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         recipe_list.adapter = RecipeAdapter(recipes, this, recipeSelected = {
             val intent = RecipeDetailActivity.newIntent(it, this)
-            startActivity(Intent(this,RecipeDetailActivity::class.java))
+            startActivity(intent)
         })
 
     }
@@ -54,7 +53,6 @@ private class RecipeAdapter(val recipes: List<Recipe>, val context: Context, val
         holder.itemView.setOnClickListener {
             recipeSelected(recipe)
         }
-
 
         holder.itemView.item_recipe_name.text = recipe.name
         Glide.with(context).load(recipe.imageURL).into(holder.itemView.item_recipe_image)
